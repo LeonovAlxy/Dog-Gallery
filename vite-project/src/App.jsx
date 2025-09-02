@@ -1,12 +1,11 @@
-import { useState } from "react";
 import "./App.css";
 import Display from "./Comps/Display";
 
 function App() {
   return (
     <>
+      <h1>Галерея собак</h1>
       <Display />
-      <p>Click on the Vite and React logos to learn more</p>
     </>
   );
 }
