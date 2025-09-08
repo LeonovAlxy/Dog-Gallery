@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./input.css";
-const InputComp = ({ setDogCount }) => {
+const InputComp = ({ setDogCount, reloadCount, setReloadCount }) => {
   const [dogInputCount, setDogInputCount] = useState("");
-  const [reloadCount, setReloadCount] = useState(0);
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
@@ -30,7 +29,7 @@ const InputComp = ({ setDogCount }) => {
   return (
     <>
       <div className="reloadCountComp">
-        <h3>Картинки обновленые: {reloadCount} раз/а</h3>
+        <h3>Картинки обновлены: {reloadCount} раз/а</h3>
       </div>
       <div className="inputComp">
         <label>Показать:</label>

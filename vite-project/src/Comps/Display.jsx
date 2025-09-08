@@ -9,6 +9,7 @@ const Display = () => {
   const [dogList, setDogList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [breed, setBreed] = useState("");
+  const [reloadCount, setReloadCount] = useState(-1);
 
   async function dataRequestRandom() {
     setLoading(true);
@@ -49,10 +50,15 @@ const Display = () => {
       ? dataRequestRandom()
       : dataRequestByBreed();
   }, [dogCount, breed]);
+  useEffect(() => setReloadCount((prev) => prev + 1), [breed]);
 
   return (
     <div>
-      <InputComp setDogCount={setDogCount} />
+      <InputComp
+        setDogCount={setDogCount}
+        setReloadCount={setReloadCount}
+        reloadCount={reloadCount}
+      />
       <BreedsComp setLoading={setLoading} setBreed={setBreed} />
       <>
         {loading ? (
